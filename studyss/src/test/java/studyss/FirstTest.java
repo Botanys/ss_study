@@ -10,7 +10,7 @@ public class FirstTest  extends TestBase {
 
         login("Meeet@ua.fm", "123456qwerty", "ua.fm");
         clickCreateLetterHeaderMainMailBox();
-        fillNewMailForm(new MailFillForm(" @ua.fm", "Test", "TypeSmthing"));
+        fillNewMailForm(new MailFillForm("Meeet@ua.fm", "Test", "TypeSmthing"));
         clickSendButtonTopCreateNewLetter();
 
 
