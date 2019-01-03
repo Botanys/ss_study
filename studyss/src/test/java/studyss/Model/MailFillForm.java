@@ -1,9 +1,9 @@
-package studyss;
+package studyss.Model;
 
 public class MailFillForm {
-    private final String sendTo;
-    private final String topicOfTheLetter;
-    private final String bodyOfTheLetter;
+    public final String sendTo;
+    public final String topicOfTheLetter;
+    public final String bodyOfTheLetter;
 
     public MailFillForm(String sendTo, String topicOfTheLetter, String bodyOfTheLetter) {
         this.sendTo = sendTo;
