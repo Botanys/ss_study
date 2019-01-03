@@ -7,7 +7,7 @@ import studyss.Model.MailFillForm;
 
 public class NewMailFillForm {
     public ChromeDriver driver;
-    WebDriverWait wait ;
+    public WebDriverWait wait ;
 
     public void clickSendButtonTopCreateNewLetter() {
         driver.findElement(By.xpath("//p[@class='send_container']/input[@type='submit'][@name='send']")).click();
