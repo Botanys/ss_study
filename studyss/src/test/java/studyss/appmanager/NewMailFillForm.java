@@ -5,25 +5,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import studyss.Model.MailFillForm;
 
-public class NewMailFillForm {
-    public ChromeDriver driver;
-    WebDriverWait wait ;
 
-    public void clickSendButtonTopCreateNewLetter() {
-        driver.findElement(By.xpath("//p[@class='send_container']/input[@type='submit'][@name='send']")).click();
+public class NewMailFillForm extends IteractionMethods{
+
+
+
+    public NewMailFillForm(ChromeDriver driver) {
+        super(driver);
+
+
     }
 
     public void fillNewMailForm(MailFillForm mailFillForm) {
-        driver.findElement(By.xpath("//textarea[@name='to']")).click();
-        driver.findElement(By.xpath("//textarea[@name='to']")).clear();
-        driver.findElement(By.xpath("//textarea[@name='to']")).sendKeys(mailFillForm.getSendTo());
-
-        driver.findElement(By.xpath("//span//input[@type='text']")).click();
-        driver.findElement(By.xpath("//span//input[@type='text']")).clear();
-        driver.findElement(By.xpath("//span//input[@type='text']")).sendKeys(mailFillForm.getTopicOfTheLetter());
-
-        driver.findElement(By.xpath("//div/textarea[@name='body']")).click();
-        driver.findElement(By.xpath("//div/textarea[@name='body']")).clear();
-        driver.findElement(By.xpath("//div/textarea[@name='body']")).sendKeys(mailFillForm.getBodyOfTheLetter());
+        type(By.xpath("//textarea[@name='to']"), mailFillForm.getSendTo());
+        type(By.xpath("//span//input[@type='text']"), mailFillForm.getTopicOfTheLetter());
+        type(By.xpath("//div/textarea[@name='body']"), mailFillForm.getBodyOfTheLetter());
     }
+
 }

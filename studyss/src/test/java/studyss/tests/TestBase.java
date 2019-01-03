@@ -11,9 +11,7 @@ public class TestBase {
     @BeforeTest
 
     public void launchBrowser() {
-
         app.unit();
-
     }
 
     @AfterTest

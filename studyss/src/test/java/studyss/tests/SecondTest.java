@@ -16,9 +16,9 @@ public class SecondTest extends TestBase{
 
     public void sendEmptyEmail() throws Exception {
         app.clickCreateLetterHeaderMainMailBox();
-        app.clickSendButtonTopCreateNewLetter();
-        app.alertCompareByText("При заполнении формы были допущены ошибки!");
-        Assert.assertTrue(app.driver.findElement(By.xpath("//span[contains(text(), 'Поле \"Кому\" не указано')]")).isDisplayed());
+        app.getNewMailFillForm().click(By.xpath("//p[@class='send_container']/input[@type='submit'][@name='send']"));
+        app.getNavigationHelper().alertCompareByText("При заполнении формы были допущены ошибки!");
+        Assert.assertTrue(app.getNavigationHelper().driver.findElement(By.xpath("//span[contains(text(), 'Поле \"Кому\" не указано')]")).isDisplayed());
     }
 }
 
