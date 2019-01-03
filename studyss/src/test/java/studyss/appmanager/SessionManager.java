@@ -8,11 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
-public class SessionManager {
+public class SessionManager extends BaseActionClass{
     private ChromeDriver driver;
 
     public SessionManager(ChromeDriver driver){
-        this.driver  = driver;
+        super(driver);
 
     }
 
@@ -21,18 +21,13 @@ public class SessionManager {
     }
 
     public void login(String loginName, String password, String enterDomain) {
-        driver.findElement(By.xpath("//input[@name='login']"));
-        driver.findElement(By.xpath("//input[@name='login']")).clear();
-        driver.findElement(By.xpath("//input[@name='login']")).sendKeys(loginName);
 
-        driver.findElement(By.xpath("//input[@type='password']"));
-        driver.findElement(By.xpath("//input[@type='password']")).clear();
-        driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
-
+        clickAndType(By.xpath("//input[@name='login']"), loginName);
+        clickAndType((By.xpath("//input[@type='password']")), password);
         Select chouseDomain = new Select(driver.findElement(By.xpath("//select[@name='domn']")));
         chouseDomain.selectByValue(enterDomain);
 
-        driver.findElement(By.xpath("//input[@value='Войти']")).click();
+        clickOnLocator(By.xpath("//input[@value='Войти']"));
     }
 
     public void alertCompareByText(String TextShouldBe) throws Exception {
