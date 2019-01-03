@@ -6,8 +6,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import studyss.Model.MailFillForm;
 
 public class NewMailFillForm {
+
+
     public ChromeDriver driver;
-    public WebDriverWait wait ;
+
+    public NewMailFillForm(ChromeDriver driver) {
+
+        this.driver = driver;
+    }
+
 
     public void clickSendButtonTopCreateNewLetter() {
         driver.findElement(By.xpath("//p[@class='send_container']/input[@type='submit'][@name='send']")).click();
