@@ -1,13 +1,14 @@
 package studyss.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import studyss.Model.MailFillForm;
 
 public class NewMailFillForm extends BaseActionClass{
 
 
-    public NewMailFillForm(ChromeDriver driver) {
+    public NewMailFillForm(WebDriver driver) {
         super(driver);
     }
 

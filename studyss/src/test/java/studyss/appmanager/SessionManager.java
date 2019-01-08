@@ -2,6 +2,7 @@ package studyss.appmanager;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,7 +11,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
 public class SessionManager extends BaseActionClass{
 
-    public SessionManager(ChromeDriver driver){
+    public SessionManager(WebDriver driver){
         super(driver);
 
     }
@@ -19,7 +20,7 @@ public class SessionManager extends BaseActionClass{
         driver.findElement(By.xpath("//li/a[contains(text(),'Создать')]")).click();
     }
 
-    public void login(String loginName, String password, String enterDomain) {
+    public void logInViaMailMainPage(String loginName, String password, String enterDomain) {
 
         clickAndType(By.xpath("//input[@name='login']"), loginName);
         clickAndType((By.xpath("//input[@type='password']")), password);
@@ -40,4 +41,12 @@ public class SessionManager extends BaseActionClass{
         }
         else throw new Exception("Teкст алерта не верный");
     }
+
+
+    public void clickHelpHeaderMainMailBox(){
+        clickOnLocator(By.xpath("//a[contains(text(), 'Помощь')]"));
+    }
+
+
+
 }

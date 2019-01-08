@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 
 
-public class SecondTest extends TestBase{
+public class SendEmailWithEmtyAddress extends TestBase{
 
 
 
