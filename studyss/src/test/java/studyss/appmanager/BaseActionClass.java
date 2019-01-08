@@ -19,7 +19,13 @@ public class  BaseActionClass {
 
     public void clickAndType(By Locator, String text) {
         driver.findElement(Locator).click();
+        if(text != null){
+            String existingText = driver.findElement(Locator).getAttribute("value");
+            if (! text.equals(existingText)) {
+            }
+    }
         driver.findElement(Locator).clear();
         driver.findElement(Locator).sendKeys(text);
+        }
     }
-}
+

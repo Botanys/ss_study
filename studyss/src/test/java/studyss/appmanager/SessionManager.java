@@ -24,8 +24,8 @@ public class SessionManager extends BaseActionClass{
 
         clickAndType(By.xpath("//input[@name='login']"), loginName);
         clickAndType((By.xpath("//input[@type='password']")), password);
-        Select chouseDomain = new Select(driver.findElement(By.xpath("//select[@name='domn']")));
-        chouseDomain.selectByValue(enterDomain);
+        Select chooseDomain = new Select(driver.findElement(By.xpath("//select[@name='domn']")));
+        chooseDomain.selectByValue(enterDomain);
 
         clickOnLocator(By.xpath("//input[@value='Войти']"));
     }
