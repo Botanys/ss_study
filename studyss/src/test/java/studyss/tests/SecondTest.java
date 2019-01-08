@@ -20,6 +20,9 @@ public class SecondTest extends TestBase{
         app.getSessionManager().alertCompareByText("При заполнении формы были допущены ошибки!");
         Assert.assertTrue(app.driver.findElement(By.xpath("//span[contains(text(), 'Поле \"Кому\" не указано')]")).isDisplayed());
     }
+
+
+
 }
 
 

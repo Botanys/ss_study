@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
 public class SessionManager extends BaseActionClass{
-    private ChromeDriver driver;
 
     public SessionManager(ChromeDriver driver){
         super(driver);
@@ -32,7 +31,7 @@ public class SessionManager extends BaseActionClass{
 
     public void alertCompareByText(String TextShouldBe) throws Exception {
         driver.switchTo().alert();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         Alert alert = wait.until(alertIsPresent());
         String alertText = alert.getText();
         if (alertText.equals(TextShouldBe))

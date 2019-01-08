@@ -18,7 +18,7 @@ public class ApplicationManager {
         driver.get("https://www.i.ua/");
         newMailFillForm = new NewMailFillForm(driver);
         sessionManager = new SessionManager(driver);
-        sessionManager.login("Meeet@ua.fm", "123456qwerty", "ua.fm");
+      //  sessionManager.login("Meeet@ua.fm", "123456qwerty", "ua.fm");
     }
 
     public void stop() {
