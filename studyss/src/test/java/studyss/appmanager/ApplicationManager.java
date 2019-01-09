@@ -17,7 +17,7 @@ public class ApplicationManager {
     public WebDriver driver;
     private String browser;
 
-    public ApplicationManager(String browser) {
+    public ApplicationManager(String browser)  {
         this.browser = browser;
     }
 

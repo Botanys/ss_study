@@ -5,6 +5,7 @@ public class MailFillForm {
     public final String topicOfTheLetter;
     public final String bodyOfTheLetter;
 
+
     public MailFillForm(String sendTo, String topicOfTheLetter, String bodyOfTheLetter) {
         this.sendTo = sendTo;
         this.topicOfTheLetter = topicOfTheLetter;
@@ -22,4 +23,8 @@ public class MailFillForm {
     public String getBodyOfTheLetter() {
         return bodyOfTheLetter;
     }
-}
+
+
+
+    }
+

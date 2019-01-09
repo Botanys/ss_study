@@ -2,6 +2,7 @@ package studyss.appmanager;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -31,15 +32,18 @@ public class SessionManager extends BaseActionClass{
     }
 
     public void alertCompareByText(String TextShouldBe) throws Exception {
-        driver.switchTo().alert();
+
         WebDriverWait wait = new WebDriverWait(driver, 5);
         Alert alert = wait.until(alertIsPresent());
+        driver.switchTo().alert();
         String alertText = alert.getText();
         if (alertText.equals(TextShouldBe))
         {
             alert.accept();
         }
         else throw new Exception("Teкст алерта не верный");
+
+
     }
 
 
