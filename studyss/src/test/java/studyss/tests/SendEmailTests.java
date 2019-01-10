@@ -62,9 +62,6 @@ public class SendEmailTests extends TestBase {
     }
 
 }
-/*    @Test
 
-    List<MailFillForm> before = app.getMailBoxMainPage().getMailName();
-}*/
 
 
