@@ -14,6 +14,7 @@ public class ApplicationManager {
 
     private SessionManager sessionManager;
     private NewMailFillForm newMailFillForm;
+    private MailBoxMainPage mailBoxMainPage;
     public WebDriver driver;
     private String browser;
 
@@ -34,6 +35,7 @@ public class ApplicationManager {
         driver.get("https://www.i.ua/");
         newMailFillForm = new NewMailFillForm(driver);
         sessionManager = new SessionManager(driver);
+        mailBoxMainPage = new MailBoxMainPage(driver);
         sessionManager.logInViaMailMainPage("Meeet@ua.fm", "123456qwerty", "ua.fm");
     }
 
@@ -48,5 +50,9 @@ public class ApplicationManager {
 
     public SessionManager getSessionManager() {
         return sessionManager;
+    }
+
+    public MailBoxMainPage getMailBoxMainPage(){
+        return mailBoxMainPage;
     }
 }

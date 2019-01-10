@@ -2,9 +2,7 @@ package studyss.appmanager;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -31,16 +29,19 @@ public class SessionManager extends BaseActionClass{
         clickOnLocator(By.xpath("//input[@value='Войти']"));
     }
 
-    public void alertCompareByText(String TextShouldBe) throws Exception {
+    public void alertCompareByText(String TextShouldBe, boolean assept) throws Exception {
 
         WebDriverWait wait = new WebDriverWait(driver, 5);
         Alert alert = wait.until(alertIsPresent());
         driver.switchTo().alert();
         String alertText = alert.getText();
-        if (alertText.equals(TextShouldBe))
+        if (alertText.equals(TextShouldBe) && (assept))
         {
             alert.accept();
+        }else if (alertText.equals(TextShouldBe) &&  !assept){
+            alert.dismiss();
         }
+
         else throw new Exception("Teкст алерта не верный");
 
 

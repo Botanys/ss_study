@@ -10,7 +10,9 @@ public class MailHelpRubric extends TestBase {
       @Test
     public void mailHelp() {
           app.getSessionManager().clickHelpHeaderMainMailBox();
+
           Assert.assertTrue(app.driver.findElement(By.xpath("//span[contains(text(), 'Помощь')]")).isDisplayed());
+
 
     }
 }

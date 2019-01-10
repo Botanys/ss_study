@@ -23,4 +23,7 @@ public class NewMailFillForm extends BaseActionClass{
         clickAndType(By.xpath("//div/textarea[@name='body']"), mailFillForm.getBodyOfTheLetter());
     }
 
+    public void clickOnMailsButtom() {
+        clickOnLocator(By.xpath("//a[contains(text(), 'Письма')]"));
+    }
 }
